@@ -16,7 +16,7 @@
                         <h3>{{$shop->ShopName}}</h3>
                         <br>
                             <a href="#" class="btn-card">Like</a>
-                            <a href="#" class="btn-card2">Dislike</a>
+                            <a href="#" class="btn-card2">dislike</a>
                     </div>
                 </div>
             </div>
