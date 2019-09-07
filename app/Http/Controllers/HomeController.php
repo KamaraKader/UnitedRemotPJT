@@ -27,4 +27,5 @@ class HomeController extends Controller
         $shops = Shop::all();
         return view('home',compact('shops'));
     }
+
 }

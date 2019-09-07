@@ -1,11 +1,11 @@
 @extends('layouts.app')
 <!-- details card section starts from here -->
 @section('content')
-@foreach ($shops as $shop)
+
 <div class="container">
 
         <div class="row">
-
+        @foreach ($shops as $shop)
             <div class="col-md-4">
                 <div class="card-content">
                     <div class="card-img">
@@ -14,15 +14,25 @@
                     </div>
                     <div class="card-desc">
                         <h3>{{$shop->ShopName}}</h3>
+
+                        @if(!$shop->favouritedBy(Auth::user()))
                         <br>
-                            <a href="#" class="btn-card">Like</a>
-                            <a href="#" class="btn-card2">dislike</a>
+                            <a href="#" onclick="event.preventDefault();
+                            document.getElementById('product-fav-form').submit();" class="btn-card">Like</a>
+                            <form id="product-fav-form" class="hidden" action="{{ route('shops.fav.store', $shop) }}" method="POST">
+                                {{ csrf_field() }}
+                            </form>
+                        @endif
+
+                        <!-- <a href="#" class="btn-card2">dislike</a> -->
                     </div>
+
                 </div>
             </div>
+            @endforeach
         </div>
 
     </div>
-    @endforeach
+
 @endsection
 <!-- details card section starts from here -->

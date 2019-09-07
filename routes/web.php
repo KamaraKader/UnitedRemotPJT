@@ -18,3 +18,6 @@
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::post('/shops/{shop}/favourites', 'ShopController@store')->name('shops.fav.store');
+Route::get('/shops/favourites', 'ShopController@index')->name('shops.fav');
+Route::delete('/shop/{product}/favourites', 'ShopController@destroy')->name('shops.fav.destroy');
