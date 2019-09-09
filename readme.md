@@ -44,7 +44,7 @@ In the ShopController.php I created diffrentes functions to get, store,  and rem
 LonginController.php allows a user who is already registered to log in.
 RegisterController.php allows a user to signup
 
-The Model of this application
+The Model of this application : 
 This application have 2 model : User.php and Shop.php, these models are in folder named app, User and Shop model are connected to the databases named "users" and "shops". also I created different relationship beetween these models, I explained thes relationships in each model file as a comment.
 
 ## tables of the database
