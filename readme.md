@@ -18,7 +18,7 @@ This application is the test of United Remote for the Full-Stack Coding Chaleng 
 ## what I did not do:
 
 In the bonus part, I have note done :
-- [As a User, I can dislike a shop, so it won’t be displayed within “Nearby Shops” list during the next 2 hours]
+- As a User, I can dislike a shop, so it won’t be displayed within “Nearby Shops” list during the next 2 hours.
 
 ## How install the project in locale machine
 
