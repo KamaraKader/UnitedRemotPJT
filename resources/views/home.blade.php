@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<!-- details card section starts from here -->
+<!-- shop list section starts from here -->
 @section('content')
 
 <div class="container">
@@ -24,7 +24,7 @@
                             </form>
                         @endif
 
-                        <!-- <a href="#" class="btn-card2">dislike</a> -->
+
                     </div>
 
                 </div>
@@ -35,4 +35,4 @@
     </div>
 
 @endsection
-<!-- details card section starts from here -->
+<!-- shop list section end here -->

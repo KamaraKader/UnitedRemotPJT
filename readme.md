@@ -1,72 +1,61 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
+## Application for full-stack option of United Remot test with PHP and laravel framework
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+This application is the test of United Remote for the Full-Stack Coding Chaleng Option. for the techologie, I work with the laravel framework of php.
 
-## About Laravel
+## The different features I created in the application are:
+ 
+- [As a User, I can sign up using my email & password]
+- [As a User, I can sign in using my email & password]
+- [As a User, I can display the list of shops sorted by distance]
+- [As a User, I can like a shop, so it can be added to my preferred shops]
+- [when I like a shop, I can not like it a second time as long as I have not deleted it     from the list of favorite stores ]
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## For the Bonus point, I did :
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- [As a User, I can display the list of preferred shops]
+- [As a User, I can remove a shop from my preferred shops list]
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## what I did not do:
 
-## Learning Laravel
+In the bonus part, I have note done :
+- [As a User, I can dislike a shop, so it won’t be displayed within “Nearby Shops” list during the next 2 hours]
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## How install the project in locale machine
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1400 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Clone the repository with git clone
+Copy .env.example file to .env and edit database/Stripe credentials there
+Run composer install
+Run php artisan key:generate
+Run php artisan migrate --seed (it has some seeded data for your testing)
 
-## Laravel Sponsors
+for the password you need to enter 8 caracteres
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+## project architecture
+Laravel use the MVC (Model view controller), Controller to handle user requests and retrieve data, by leveraging Models, Models to interact with your database and retrieve your objects’ information, Views to render pages.
 
-## Contributing
+The Controllers of this project
+This project have 4 Controllers : HomeController.php, ShopController.php, RegisterController.php and LoginController.php.
+HomeController.php and ShopController.php are in app\Http\Controllers folder and RegisterController.php and LoginController.php are in app\Http\Controllers\Auth folder.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+In the HomeController.php I created one function to get all shop in the main page,
+In the ShopController.php I created diffrentes functions to get, store,  and remove the preferreds shop of an user.
 
-## Security Vulnerabilities
+LonginController.php allows a user who is already registered to log in
+RegisterController.php allows a user to signup
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+The Model of this application
+This application have 2 model : User.php and Shop.php, these models are in folder named app, User and Shop model are connected to the databases named "users" and "shops". also I created different relationship beetween these models, I explained thes relationships in each model file as a comment.
 
-## License
+## tables of the database
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+For this application, I created 3 table : users, shops and preferreds tables, I created the seed file to be able to display shops on the main page. The database file are in database\migrations folder and the seed file named ShoptableSeeder.php is in migration\seeds folder.
+
+## the views and html/css
+for this project, I created 4 pages : home.blade.php the main page, fav.blade.php the page to get the user preferred shop in resources\views folder , login.blade.php for login and register.blade.php for sign up in resources\views\auth folder.
+
+for the CSS, there are 2 CSS file : style.css for main page and the favorite shop page, 
+style2.css for the login and register page. the CSS file are in public\css folder
+
+## the routes
+you can see the list of routes in the folder named routes and the route file is web.php

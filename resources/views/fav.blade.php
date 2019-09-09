@@ -1,5 +1,5 @@
 @extends('layouts.app')
-<!-- details card section starts from here -->
+<!-- preferred shop section starts from here -->
 @section('content')
 <div class="container">
 
@@ -17,7 +17,7 @@
                     <h3>{{$product->ShopName}}</h3>
                         <br>
                         <a href="#" onclick="event.preventDefault();
-                            document.getElementById('product-fav-destroy-{{ $product->id }}').submit();" class="btn-card2">Dislike</a>
+                            document.getElementById('product-fav-destroy-{{ $product->id }}').submit();" class="btn-card2">Remove</a>
                                 <form id="product-fav-destroy-{{ $product->id }}" action="{{ route('shops.fav.destroy', $product) }}" method="POST">
                                     {{ csrf_field() }}
                                     {{ method_field('DELETE') }}
@@ -30,10 +30,10 @@
 
                 @endforeach
             @else
-            No favourite items found :(
+            Sorry, no preferred shop found !
             @endif
             </div>
 
     </div>
 @endsection
-<!-- details card section starts from here -->
+<!-- preferred shop section end here -->

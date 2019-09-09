@@ -16,8 +16,14 @@
 // });
 
 Auth::routes();
-
+// get all store in the main page
 Route::get('/', 'HomeController@index')->name('home');
+
+// route for store the
 Route::post('/shops/{shop}/favourites', 'ShopController@store')->name('shops.fav.store');
+
+//route for get the list of shop liked by an user
 Route::get('/shops/favourites', 'ShopController@index')->name('shops.fav');
+
+//route for remove a shop from the list
 Route::delete('/shop/{product}/favourites', 'ShopController@destroy')->name('shops.fav.destroy');

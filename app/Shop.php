@@ -14,7 +14,7 @@ class Shop extends Model
     }
 
     /**
-     * This will check if a particular user has favourited an shop
+     * This will check if a particular user has liked an shop
      */
     public function favouritedBy(User $user)
     {

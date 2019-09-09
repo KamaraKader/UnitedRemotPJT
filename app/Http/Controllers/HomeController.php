@@ -22,6 +22,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    // function to get all shop in the main page
     public function index()
     {
         $shops = Shop::all();

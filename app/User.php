@@ -37,7 +37,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function favouriteShops()
+    /**
+     * polymorphic relation, a user may like many shop and
+     * a shop may be liked by many users
+     */
+     public function favouriteShops()
         {
             return $this->morphedByMany(Shop::class, 'prefereds')
                         ->withPivot(['created_at'])

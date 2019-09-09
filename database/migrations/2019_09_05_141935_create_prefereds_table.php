@@ -20,7 +20,7 @@ class CreatePreferedsTable extends Migration
             $table->string('prefereds_type'); // reference to thing we are favouriting
             $table->timestamps();
 
-            // $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
         });
 
         Schema::table('prefereds', function($table) {
