@@ -4,16 +4,16 @@ This application is the test of United Remote for the Full-Stack Coding Chaleng 
 
 ## The different features I created in the application are:
  
-- [As a User, I can sign up using my email & password]
-- [As a User, I can sign in using my email & password]
-- [As a User, I can display the list of shops sorted by distance]
-- [As a User, I can like a shop, so it can be added to my preferred shops]
-- [when I like a shop, I can not like it a second time as long as I have not deleted it     from the list of favorite stores ]
+- As a User, I can sign up using my email & password
+- As a User, I can sign in using my email & password
+- As a User, I can display the list of shops sorted by distance
+- As a User, I can like a shop, so it can be added to my preferred shops
+- when I like a shop, I can not like it a second time as long as I have not deleted it     from the list of favorite stores
 
 ## For the Bonus point, I did :
 
-- [As a User, I can display the list of preferred shops]
-- [As a User, I can remove a shop from my preferred shops list]
+- As a User, I can display the list of preferred shops
+- As a User, I can remove a shop from my preferred shops list
 
 ## what I did not do:
 
@@ -22,11 +22,11 @@ In the bonus part, I have note done :
 
 ## How install the project in locale machine
 
-Clone the repository with git clone
-Copy .env.example file to .env and edit database/Stripe credentials there
-Run composer install
-Run php artisan key:generate
-Run php artisan migrate --seed (it has some seeded data for your testing)
+- Clone the repository with git clone
+- Copy .env.example file to .env and edit database/Stripe credentials there
+- Run composer install
+- Run php artisan key:generate
+- Run php artisan migrate --seed (it has some seeded data for your testing)
 
 for the password you need to enter 8 caracteres
 
@@ -41,7 +41,7 @@ HomeController.php and ShopController.php are in app\Http\Controllers folder and
 In the HomeController.php I created one function to get all shop in the main page,
 In the ShopController.php I created diffrentes functions to get, store,  and remove the preferreds shop of an user.
 
-LonginController.php allows a user who is already registered to log in
+LonginController.php allows a user who is already registered to log in.
 RegisterController.php allows a user to signup
 
 The Model of this application
